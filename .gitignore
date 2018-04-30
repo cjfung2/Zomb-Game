@@ -7,20 +7,30 @@ public class Main {
         public static boolean loopprogram;
         public static ArrayList inventory = new ArrayList();
         public static ArrayList room = new ArrayList();
-
+        public static int mapWidth = 10;
+        public static int mapHeight = 10;
+        public static int locationX;
+        public static int locationY;
 
     public static void main(String[] args) {
 
+        //Start of Game
+        locationX = 0;
+        locationY = 0;
+        buildMap();
         sc= new Scanner(System.in);
         loopprogram = true;
-        displayMenu();
+        start();
+
+        //Running game
         while(loopprogram){
+            getLocation(locationX,locationY);
             System.out.print("Command? ");
             String cmd= sc.next();
             parseCmd(cmd);
         }
     }
-    public static void displayMenu(){
+    public static void start(){
         System.out.println("Menu: ");
         System.out.println("north ");
         System.out.println("south ");
@@ -31,15 +41,19 @@ public class Main {
         switch(cmd){
             case "north":
                 System.out.println("You move north.");
+                locationY = locationY + 1;
                 break;
             case "south":
                 System.out.println("You move south.");
+                locationY = locationY - 1;
                 break;
             case "east":
                 System.out.println("You move east.");
+                locationX= locationX + 1;
                 break;
             case "west":
                 System.out.println("You move west.");
+                locationX = locationX - 1;
                 break;
             case "inventory":
                 System.out.println(inventory);
@@ -59,42 +73,42 @@ public class Main {
             case "shoot":
 
                 break;
-            case "fuck":
-
+            case "map":
+                getLocation(locationX, locationY);
                 break;
-            case "open":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
-            case "take":
-
-                break;
+//            case "open":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
+//            case "take":
+//
+//                break;
             case "quit":
                 System.out.println("Goodbye!");
                 loopprogram = false;
@@ -105,4 +119,32 @@ public class Main {
         }
 
     }
+    public static void startArea(){
+
+    }
+
+    public static void buildMap() {
+        for(int i= 0; i < mapHeight;i++){
+            for(int j = 0; j < mapWidth; j++){
+
+            }
+            System.out.println();
+        }
+    }
+    public static void getLocation(int x, int y){
+        for(int i= 0; i < mapHeight;i++){
+            if(i == y){
+
+            }
+        }
+            for(int j = 0; j < mapWidth; j++){
+                if (j == x){
+
+                }
+            }
+
+
+        System.out.println();
+    }
 }
+
