@@ -1,22 +1,108 @@
-# Compiled class file
-*.class
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-# Log file
-*.log
+public class Main {
+        public static Scanner sc;
+        public static boolean loopprogram;
+        public static ArrayList inventory = new ArrayList();
+        public static ArrayList room = new ArrayList();
 
-# BlueJ files
-*.ctxt
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    public static void main(String[] args) {
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
+        sc= new Scanner(System.in);
+        loopprogram = true;
+        displayMenu();
+        while(loopprogram){
+            System.out.print("Command? ");
+            String cmd= sc.next();
+            parseCmd(cmd);
+        }
+    }
+    public static void displayMenu(){
+        System.out.println("Menu: ");
+        System.out.println("north ");
+        System.out.println("south ");
+        System.out.println("east ");
+        System.out.println("west ");
+    }
+    public static void parseCmd(String cmd){
+        switch(cmd){
+            case "north":
+                System.out.println("You move north.");
+                break;
+            case "south":
+                System.out.println("You move south.");
+                break;
+            case "east":
+                System.out.println("You move east.");
+                break;
+            case "west":
+                System.out.println("You move west.");
+                break;
+            case "inventory":
+                System.out.println(inventory);
+                break;
+            case "grab":
+                inventory.add(room(0));
+                break;
+            case "run":
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+                break;
+            case "flee":
+
+                break;
+            case "attack":
+
+                break;
+            case "shoot":
+
+                break;
+            case "fuck":
+
+                break;
+            case "open":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "take":
+
+                break;
+            case "quit":
+                System.out.println("Goodbye!");
+                loopprogram = false;
+                break;
+            default:
+                System.out.println("Unrecognized command!");
+                break;
+        }
+
+    }
+}
